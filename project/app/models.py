@@ -1,5 +1,5 @@
 from django.db import models
 
 # Create your models here.
-class Data(models.Model):
-    Name = models.TextField()
+class Todo(models.Model):
+    task=models.CharField(max_length=250)
