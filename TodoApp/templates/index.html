@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form class="add" method="post">
+            {% csrf_token %} 
+            <input type="text" name="task" placeholder="Add Task">
+            <input type="submit">
+        </form> 
+        <div class="list">
+           {% for todo in todos %}
+           <div class="task">
+            <div>
+                <span>{{todo.task}}</span>
+            </div>
+            <div>
+                <a href="update/{{todo.pk}}" class="edit">Edit</a>
+            <a href="delete/{{todo.pk}}" class="delete">Delete</a>
+            </div>
+        </div>
+           {% endfor %}
+            
+        </div>
+    </div>
+</body>
+</html>
