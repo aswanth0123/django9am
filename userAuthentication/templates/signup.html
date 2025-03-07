@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIgnup</title>
+    <link rel="stylesheet" href="{% static 'CSS/signup.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>User Registration</h1>
+        <form id="signup" action="" method="post" class="login">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Name:</label>
+                <input type="text" id="name" name="username" >
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" >
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" >
+            </div>
+            <div class="form-group">
+                <label for="cpassword">Confirm Password:</label>
+                <input type="password" id="cpassword" name="cpassword" >
+            </div>
+            <p>If you already have an account?<a href="../">Login</a></p>
+            <input type="submit" value="Signup">
+        </form>
+    </div>
+</body>
+</html>
+</body>
+</html>

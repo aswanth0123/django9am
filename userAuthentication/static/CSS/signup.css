@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-image: linear-gradient(to bottom right, purple, orange);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 450px; 
+    min-width: 280px; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 2px 10px rgba(213, 212, 212, 0.788);
+    backdrop-filter: blur(10px); 
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+.login
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-group {
+    margin-bottom: 15px;
+    width: 90%;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fdfdfd;
+    font-size: 16px;
+}
+
+input,textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1e7dd;
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: white;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    width: 70%;
+    padding: 12px 0px;
+    background-color: rgb(48, 48, 209);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 30px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #102a88;
+}
+.btnpost
+{
+    background-color:green;
+    width: 40%;
+    margin-right: 20px;
+}
+.btnpost:hover
+{
+    background-color:rgb(5, 98, 5);
+}
+.btndiv
+{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+}
+.justconnection
+{
+    text-decoration: none;
+    color: white;
+}
+
+
+@media (min-width: 600px) {
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 70%;
+    }
+}
