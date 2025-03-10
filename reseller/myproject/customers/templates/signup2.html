@@ -1,0 +1,206 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Start Reseller</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img1/fav-icon.ico' %}">
+    
+    <link rel="stylesheet" href="{% static 'css1/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css1/style.css' %}?v=1.1">
+
+    <script src="{% static 'js1/jquery.min.js' %}"></script>
+    <script src="{% static 'js1/bootstrap.min.js' %}"></script>
+
+    <script type="text/javascript">
+        jQuery("document").ready(function ($) {
+            $('#companybtn').click(function () {
+                $('.businessname-con').toggleClass('show-business');
+            });
+            
+            // Add UK postcode validation
+            $('input[name="zipcode"]').on('blur', function() {
+                const zipcode = $(this).val().toUpperCase().replace(/\s/g, '');
+                if (zipcode) {
+                    // UK Postcode regex pattern - simplified version
+                    const ukPostcodePattern = /^[A-Z]{1,2}[0-9][A-Z0-9]?[0-9][A-Z]{2}$/;
+                    
+                    if (!ukPostcodePattern.test(zipcode)) {
+                        // Format with space for display
+                        if (zipcode.length >= 5) {
+                            const formatted = zipcode.slice(0, -3) + ' ' + zipcode.slice(-3);
+                            $(this).val(formatted);
+                        } else {
+                            $('.zipcode-info').addClass('text-danger').text('Please enter a valid UK postcode (e.g., SW1A 1AA)');
+                        }
+                    } else {
+                        // Format with space for display
+                        const formatted = zipcode.slice(0, -3) + ' ' + zipcode.slice(-3);
+                        $(this).val(formatted);
+                        $('.zipcode-info').removeClass('text-danger').text('');
+                    }
+                }
+            });
+            
+            // Form submission
+            $('form').on('submit', function() {
+                console.log('Form submitted');
+                $('.continue-btn').prop('disabled', true).text('Processing...');
+                return true;
+            });
+        });
+    </script>
+    
+    <style>
+        .field-info {
+            font-size: 12px;
+            color: #666;
+            margin-top: 2px;
+        }
+        .text-danger {
+            color: #dc3545 !important;
+        }
+        .password-requirements {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .info-icon {
+            cursor: help;
+            color: #007bff;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loginheader-div">
+        <a href="{% url 'index' %}" class="donthave-account">Sign In</a>
+
+        <select>
+            <option value="">Global $</option>
+        </select>
+    </div>
+
+    <div class="login-page-wrapper signup-page">
+        <div class="login-page-middlealign">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-8 login-page signup-page">
+                        <div class="startreseller-logo">
+                            <img src="{% static 'img1/startreseller-logo.svg' %}" alt="Start Reseller">
+                        </div>
+
+                        <h5>Sign Up for Your</h5>
+                        <h4>Start Reseller Account</h4>
+
+                        {% if messages %}
+                        <div class="messages">
+                            {% for message in messages %}
+                            <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %}">
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="login-form-item mb-0">
+                                <label>Your Name</label>
+                                <input type="text" name="name" required>
+                            </div>
+                            <h6 class="clickhere-companyname">
+                                <button type="button" id="companybtn">Click here</button> if you have a company name.
+                            </h6>
+
+                            <div class="businessname-con">
+                                <div class="login-form-item">
+                                    <label>Business Name</label>
+                                    <input type="text" name="company">
+                                </div>
+                                <div class="login-form-item">
+                                    <label>GST No.</label>
+                                    <input type="text" name="gst_no">
+                                </div>
+                            </div>
+
+                            <div class="login-form-item">
+                                <label>Mobile Number</label>
+                                <input type="text" name="phone" required>
+                            </div>
+
+                            <!-- New Fields for Email and Password -->
+                            <div class="login-form-item">
+                                <label>Email Address</label>
+                                <input type="email" name="email" required>
+                                <div class="field-info">This will be your login username</div>
+                            </div>
+
+                            <div class="login-form-item">
+                                <label>Password</label>
+                                <input type="password" name="password" required>
+                                <div class="field-info">Must be 9-16 characters with at least one lowercase letter, uppercase letter, number, and special character</div>
+                            </div>
+                            <!-- End of New Fields -->
+
+                            <div class="login-form-item">
+                                <label>Country</label>
+                                <select name="country">
+                                    <option value="GB">United Kingdom</option>
+                                </select>
+                            </div>
+
+                            <div class="login-form-item">
+                                <label>State</label>
+                                <select name="state">
+                                    <option value="United Kingdom">United Kingdom</option>
+                                </select>
+                            </div>
+
+                            <div class="login-form-item">
+                                <label>City</label>
+                                <input type="text" name="city" required>
+                            </div>
+
+                            <div class="login-form-item">
+                                <label>Zip Code</label>
+                                <input type="text" name="zipcode" required placeholder="e.g., SW1A 1AA">
+                                <div class="field-info zipcode-info">UK format postcode required (e.g., SW1A 1AA)</div>
+                            </div>
+
+                            <div class="login-form-item">
+                                <label>Selling Currency</label>
+                                <select name="selling_currency">
+                                    <option value="GBP">United Kingdom Pound</option>
+                                </select>
+                            </div>
+
+                            <label class="aggree-terms">
+                                <input type="checkbox" name="accept_policy" required> By creating an account, you agree to Startreseller's
+                                <a href="#">Terms of Service</a>, <a href="#">Cancellation Policy</a>, and 
+                                <a href="#">Privacy Notice</a>.
+                            </label>
+
+                            <button type="submit" class="continue-btn">Sign Up Now</button>
+                            <p class="agree-text">
+                                By clicking "Sign up," you consent to your data being stored in the U.S.,
+                                essential for Startreseller's services.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

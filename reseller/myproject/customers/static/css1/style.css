@@ -1,0 +1,428 @@
+@font-face {
+    font-family: 'Inter 18pt';
+    src: url('../fonts/Inter18pt-Medium.woff2') format('woff2'),
+        url('../fonts/Inter18pt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter 18pt';
+    src: url('../fonts/Inter18pt-Regular.woff2') format('woff2'),
+        url('../fonts/Inter18pt-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter 18pt';
+    src: url('../fonts/Inter18pt-Black.woff2') format('woff2'),
+        url('../fonts/Inter18pt-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter 18pt';
+    src: url('../fonts/Inter18pt-Bold.woff2') format('woff2'),
+        url('../fonts/Inter18pt-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter 18pt';
+    src: url('../fonts/Inter18pt-Italic.woff2') format('woff2'),
+        url('../fonts/Inter18pt-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter 18pt';
+    src: url('../fonts/Inter18pt-SemiBold.woff2') format('woff2'),
+        url('../fonts/Inter18pt-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter 18pt';
+    src: url('../fonts/Inter18pt-Light.woff2') format('woff2'),
+        url('../fonts/Inter18pt-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+    font-family: 'Inter 18pt', sans-serif !important;
+    --HeadingColor: #141414;
+    --TextColor: #717476;
+    --BorderColor: #e2e2e2;
+    --WhiteColor: #ffffff;
+    --PrimaryColor: #56b849;
+    --PrimaryColorHover: #34aa23;
+    transition-duration: 0.3s;
+}
+
+
+button {
+    outline: none !important;
+    transition-duration: 0.3s;
+    font-family: 'Inter 18pt', sans-serif !important;
+}
+
+p {
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--TextColor);
+    font-family: 'Inter 18pt', sans-serif !important;
+    font-weight: 300;
+}
+
+a {
+    outline: none !important;
+    transition-duration: 0.3s;
+    font-family: 'Inter 18pt', sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--headingColor);
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter 18pt', sans-serif !important;
+}
+
+
+::selection {
+    background: var(--PrimaryColor);
+    color: #fff;
+}
+
+::-moz-selection {
+    background: var(--PrimaryColor);
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 8px
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: rgba(86, 184, 73, .9);
+    -webkit-transition: .6s;
+    -moz-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(86, 184, 73, 1);
+}
+
+.login-page-wrapper{
+    width: 100%;
+    height: 100vh;
+    display: table;
+}
+
+.login-page-wrapper .login-page-middlealign{
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.login-page .continue-btn{
+    width: 100%;
+    height: 44px;
+    background: var(--PrimaryColor);
+    border: none;
+    outline: none;
+    text-align: center;
+    color: var(--WhiteColor);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition-duration: 0.3s;
+}
+
+.login-page .continue-btn:hover{
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(84,185,71,0.25);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(84,185,71,0.25);
+    box-shadow: 0px 0px 15px 0px rgba(84,185,71,0.25);
+    background: var(--PrimaryColorHover);
+}
+
+.login-page .login-form-item{
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.login-page .login-form-item input,
+.login-page .login-form-item select{
+    width: 100%;
+    height: 44px;
+    border-radius: 25px;
+    background: var(--WhiteColor);
+    border: 1px solid var(--BorderColor);
+    padding: 0px 20px;
+    color: var(--TextColor);
+    transition-duration: 0.3s;
+    font-size: 15px;
+}
+
+.login-page .login-form-item input:focus,
+.loginheader-div select:focus,
+.login-page .login-form-item select:focus{
+    border-color: var(--PrimaryColor);
+    outline: none;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(84,185,71,0.25);
+-moz-box-shadow: 0px 0px 15px 0px rgba(84,185,71,0.25);
+box-shadow: 0px 0px 15px 0px rgba(84,185,71,0.25);
+
+
+
+}
+
+.login-page .login-form-item label{
+    width: 100%;
+    padding: 0;
+    margin: 0px 0px 6px 0px;
+    color: var(--HeadingColor);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.login-page .startreseller-logo{
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.login-page .startreseller-logo img{
+    width: auto;
+    height: 30px;
+    display: inline-block;
+}
+
+.login-page h4{
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 3px 0px 30px 0px;
+    color: var(--HeadingColor);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.login-page h5{
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 0px 0px;
+    color: var(--TextColor);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.loginheader-div{
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    text-align: right;
+    padding: 25px;
+}
+
+.loginheader-div select{
+    display: inline-block;
+    height: 40px;
+    border: 1px solid var(--BorderColor);
+    padding: 0px 10px;
+    color: var(--TextColor);
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.loginheader-div .donthave-account{
+    color: var(--TextColor);
+    font-size: 14px;
+    transition-duration: 0.3s;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 300;
+}
+
+.loginheader-div .donthave-account:hover{
+    color: var(--PrimaryColor);
+}
+
+.login-page .agree-text{
+    font-size: 14px;
+    padding: 0;
+    margin: 20px 0px 0px 0px;
+    color: var(--TextColor);
+    line-height: 18px;
+}
+
+.login-page .aggree-terms{
+    font-size: 14px;
+    padding: 0px 0px 0px 20px;
+    margin: 0px 0px 20px 0px;
+    color: var(--TextColor);
+    line-height: 18px;
+    position: relative;
+}
+
+.login-page .aggree-terms a{
+    text-decoration: none;
+    color: var(--TextColor);
+    font-weight: 500;
+}
+
+.login-page .aggree-terms a:hover{
+    color: var(--PrimaryColor);
+}
+
+.login-page .aggree-terms input{
+    position: absolute;
+    left: 0px;
+    top: 4px;
+}
+
+.clickhere-companyname{
+    font-size: 14px;
+    padding: 0px 0px 0px 0px;
+    margin: 8px 0px 15px 0px;
+    color: var(--TextColor);
+    line-height: normal;
+    position: relative;
+    font-weight: 300;
+
+}
+
+.clickhere-companyname button{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    color: var(--HeadingColor);
+    background: none;
+    font-weight: 500;
+    transition-duration: 0.3s;
+}
+
+.clickhere-companyname button:hover{
+    color: var(--PrimaryColor);
+}
+
+.businessname-con{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 0px;
+    transition-duration: 0.3s;
+}
+
+.businessname-con.show-business{
+    overflow: visible;
+    height: 174px;
+}
+
+.forgot-password{
+    font-size: 14px;
+    padding: 0;
+    margin: 20px 0px 0px 0px;
+    color: var(--TextColor);
+    width: 100%;
+    text-align: center;
+}
+
+.forgot-password a{
+    color: var(--TextColor);
+    font-weight: 400;
+    transition-duration: 0.3s;
+}
+
+.forgot-password a:hover{
+    color: var(--PrimaryColor);
+}
+
+.remember-me{
+    font-size: 14px;
+    padding: 0px 0px 0px 20px;
+    margin: -5px 0px 20px 0px;
+    color: var(--TextColor);
+    line-height: 18px;
+    position: relative;
+    display: block;
+}
+
+.remember-me input{
+    position: absolute;
+    left: 0px;
+    top: 2px;
+}
+
+.signup-page .login-page-middlealign{
+    vertical-align: top;
+    padding-top: 95px;
+    padding-bottom: 45px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    
+}
+
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 980px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 540px) {
+    .login-page{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .loginheader-div{
+        background: var(--WhiteColor);
+    }
+
+    .loginheader-div{
+        padding: 15px 25px;
+    }
+    
+}
+
