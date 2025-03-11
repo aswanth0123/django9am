@@ -55,7 +55,7 @@ ROOT_URLCONF = 'myproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,12 +129,13 @@ import os
 STATIC_URL = '/static/'
 
 # Add this line to specify the static files directory
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'myapp/static'),  # Ensure your app name is correct
 ]
 
 # Optional: Set STATIC_ROOT for collectstatic (only needed in production)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
