@@ -129,7 +129,7 @@ import os
 STATIC_URL = '/static/'
 
 # Add this line to specify the static files directory
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'myapp/static'),  # Ensure your app name is correct
